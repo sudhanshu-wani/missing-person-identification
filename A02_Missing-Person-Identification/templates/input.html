@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="w3-card-4 w3-margin">
+
+    <header class="w3-container w3-blue-grey">
+      <h1>Report Missing Person </h1>
+    </header>
+
+
+    <form class="w3-container w3-margin" action="" method="post" enctype="multipart/form-data">
+      <label class="w3-text-teal"><b>Enter Your Name</b></label>
+      <input class="w3-input w3-border w3-light-grey" type="text" name='Name' value="{{ Name }}">
+      <br>
+
+      <label class="w3-text-teal"><b>Your Email</b></label>
+      <input class="w3-input w3-border w3-light-grey" type="email" name='Email' value="{{ Email }}">
+      <br>
+
+      <label class="w3-text-teal"><b>Your Contact Number </b></label>
+      <input class="w3-input w3-border w3-light-grey" type="number" name='Contact' value="{{ Contact }}">
+      <br>
+
+      <label class="w3-text-teal"><b>Enter the Name of Missing Person </b></label>
+      <input class="w3-input w3-border w3-light-grey" type="text" name='MName' value="{{ MName }}">
+      <br>
+      
+      <label class="w3-text-teal"><b>Age of Missing Person </b></label>
+      <input class="w3-input w3-border w3-light-grey" type="number" name='Age' value="{{ Age }}">
+      <br>
+
+      <label class="w3-text-teal"><b>Gender of Missing Person</b></label>
+      <select class="w3-select w3-border w3-light-grey" name="Gender">
+        <option value="" disabled selected>Choose gender</option>
+        <option value="Male" {% if Gender == 'Male' %}selected{% endif %}>Male</option>
+        <option value="Female" {% if Gender == 'Female' %}selected{% endif %}>Female</option>
+        <option value="Other" {% if Gender == 'Other' %}selected{% endif %}>Other</option>
+      </select>
+      <br>
+
+
+      <label class="w3-text-teal"><b>Missing Since  </b></label>
+      <input class="w3-input w3-border w3-light-grey" type="datetime-local" name='Mdate' value="{{ Mdate}}">
+      <br>
+
+      <label class="w3-text-teal"><b>Missing From (last seen location)  </b></label>
+      <input class="w3-input w3-border w3-light-grey" type="text" name='Mlocation' value="{{ Mlocation}}">
+      <br>
+
+      <label class="w3-text-teal"><b>Insert Picture of the Missing Person  </b></label>
+      <input class="w3-input w3-border w3-light-grey" type="file" name='Photo' value="{{ Photo }}">
+      <br>
+      
+      <label class="w3-text-teal"><b>Password</b></label>
+      <input class="w3-input w3-border w3-light-grey" type="password" name='password' value="{{ password }}">
+      <br>
+
+        <input class="w3-btn w3-blue-grey" name="sub" type="submit" value="Submit"/>
+        <br><br>
+   
+       
+    </form>
+
+    <br>
+    <footer class="w3-container w3-blue-grey">
+      <h5></h5>
+    </footer>
+    
+    </div>
+
+  
+
+    {% endblock %}
